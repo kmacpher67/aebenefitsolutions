@@ -31,3 +31,15 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+        echo $(ls -ltr)
+
+    # Runs test deploy to http://kenmacpherson.com/aebenefitsolutions
+    - name: copy file via ssh password
+      uses: appleboy/scp-action@v0.1.1
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.ATLANTIC_WEBSITE }}
+        port: ${{ secrets.PORT }}
+        source: "/*"
+        target: "/var/www/website/aebenefitsolutions"  
