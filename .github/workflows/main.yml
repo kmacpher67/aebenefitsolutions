@@ -41,4 +41,5 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.ATLANTIC_WEBSITE }}
         port: ${{ secrets.PORT }}
+        source: "*"
         target: "/var/www/website/aebenefitsolutions/"  
